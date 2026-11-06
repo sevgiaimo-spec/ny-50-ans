@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>New York • 50 Ans • Guide Ultime</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; color: #0F172A; }
+        .glass-card { background: #FFFFFF; border: 1px solid #E2E8F0; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .tab-btn { transition: all 0.2s ease; white-space: nowrap; }
+        .tab-btn.active { background: #0F172A !important; color: #FFFFFF !important; }
+    </style>
+</head>
+<body class="pb-32">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 px-4 py-3">
+        <div class="max-w-xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-2xl bg-blue-600 flex items-center justify-center text-white font-black text-base shadow-md">
+                    50
+                </div>
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">1 - 6 Mars 2027</span>
+                    <h1 class="text-sm font-extrabold text-slate-900">New York • Anniversaire</h1>
+                </div>
+            </div>
+            <button onclick="openGlobalSearch()" class="w-10 h-10 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-slate-200 transition">
+                <i class="fa-solid fa-magnifying-glass text-sm"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Navigation Onglets -->
+    <nav class="sticky top-[61px] z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 py-2.5 px-4 overflow-x-auto no-scrollbar shadow-sm">
+        <div class="max-w-xl mx-auto flex space-x-2 min-w-max">
+            <button onclick="switchTab('accueil')" id="btn-accueil" class="tab-btn active px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                <i class="fa-solid fa-house mr-1"></i> Accueil
+            </button>
+            <button onclick="switchTab('quartiers')" id="btn-quartiers" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                <i class="fa-solid fa-compass mr-1"></i> Quartiers & Spots
+            </button>
+            <button onclick="switchTab('j1')" id="btn-j1" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                J1 • Arrivée
+            </button>
+            <button onclick="switchTab('j2')" id="btn-j2" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-amber-100 text-amber-800">
+                🎂 J2 Anniv
+            </button>
+            <button onclick="switchTab('j3')" id="btn-j3" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                J3 • Sud & SoHo
+            </button>
+            <button onclick="switchTab('j4')" id="btn-j4" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                J4 • Brooklyn
+            </button>
+            <button onclick="switchTab('j5')" id="btn-j5" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                J5 • Ouest & Jazz
+            </button>
+            <button onclick="switchTab('j6')" id="btn-j6" class="tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                J6 • Départ
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contenu -->
+    <main class="max-w-xl mx-auto p-4 space-y-6">
+
+        <!-- ACCUEIL -->
+        <div id="tab-accueil" class="space-y-6">
+            <div class="glass-card rounded-3xl p-6 relative overflow-hidden">
+                <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold mb-3">
+                    <i class="fa-solid fa-cake-candles mr-1"></i> Célébration des 50 Ans
+                </span>
+                <h2 class="text-2xl font-extrabold text-slate-900 mb-2">New York City 2027</h2>
+                <p class="text-xs text-slate-600 leading-relaxed mb-5">
+                    Votre carnet de voyage interactif et sur-mesure. Itinéraires détaillés, visuels authentiques et guide complet par quartier pour un séjour inoubliable.
+                </p>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="text-[10px] uppercase font-bold text-slate-400 block mb-0.5">Hôtel d'ancrage</span>
+                        <span class="text-xs font-black text-slate-900">Hilton Club 57th St</span>
+                    </div>
+                    <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="text-[10px] uppercase font-bold text-slate-400 block mb-0.5">Dates du séjour</span>
+                        <span class="text-xs font-black text-slate-900">1 - 6 Mars 2027</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photos d'ambiance sur l'accueil -->
+            <div class="grid grid-cols-2 gap-3">
+                <div class="relative rounded-2xl overflow-hidden h-40 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Manhattan">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
+                        <span class="text-white text-xs font-bold">Manhattan & Gratte-ciels</span>
+                    </div>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden h-40 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Central Park">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
+                        <span class="text-white text-xs font-bold">Central Park</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Accès rapide quartiers -->
+            <div class="glass-card rounded-3xl p-6 space-y-4">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-sm font-bold text-slate-900 flex items-center">
+                        <i class="fa-solid fa-compass text-blue-600 mr-2"></i> Explorer par Quartier
+                    </h3>
+                    <button onclick="switchTab('quartiers')" class="text-xs text-blue-600 font-bold hover:underline">Voir tout →</button>
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div onclick="switchTab('quartiers'); filterNeighborhood('midtown')" class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 cursor-pointer transition">
+                        <h4 class="text-xs font-bold text-slate-900">Midtown & Times Sq</h4>
+                        <p class="text-[10px] text-slate-500 mt-0.5">Néons, observatoires</p>
+                    </div>
+                    <div onclick="switchTab('quartiers'); filterNeighborhood('centralpark')" class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 cursor-pointer transition">
+                        <h4 class="text-xs font-bold text-slate-900">Central Park & UWS</h4>
+                        <p class="text-[10px] text-slate-500 mt-0.5">Espaces verts, bagels</p>
+                    </div>
+                    <div onclick="switchTab('quartiers'); filterNeighborhood('downtown')" class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 cursor-pointer transition">
+                        <h4 class="text-xs font-bold text-slate-900">Downtown & SoHo</h4>
+                        <p class="text-[10px] text-slate-500 mt-0.5">Finance, architecture</p>
+                    </div>
+                    <div onclick="switchTab('quartiers'); filterNeighborhood('brooklyn')" class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 hover:border-blue-600 cursor-pointer transition">
+                        <h4 class="text-xs font-bold text-slate-900">Brooklyn & DUMBO</h4>
+                        <p class="text-[10px] text-slate-500 mt-0.5">Pont, street art</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUARTIERS & SPOTS -->
+        <div id="tab-quartiers" class="space-y-6 hidden">
+            <div class="glass-card rounded-3xl p-6 space-y-4">
+                <div>
+                    <h2 class="text-lg font-black text-slate-900">Guide par Quartier</h2>
+                    <p class="text-xs text-slate-500">Les choses à faire et spots incontournables.</p>
+                </div>
+                <div class="flex space-x-1.5 overflow-x-auto pb-2 no-scrollbar text-xs font-bold">
+                    <button onclick="filterNeighborhood('all')" class="px-3 py-1.5 rounded-xl bg-slate-900 text-white filter-chip active" data-filter="all">Tous</button>
+                    <button onclick="filterNeighborhood('midtown')" class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-600 filter-chip" data-filter="midtown">Midtown</button>
+                    <button onclick="filterNeighborhood('centralpark')" class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-600 filter-chip" data-filter="centralpark">UWS</button>
+                    <button onclick="filterNeighborhood('downtown')" class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-600 filter-chip" data-filter="downtown">Downtown</button>
+                    <button onclick="filterNeighborhood('brooklyn')" class="px-3 py-1.5 rounded-xl bg-slate-100 text-slate-600 filter-chip" data-filter="brooklyn">Brooklyn</button>
+                </div>
+                <div id="neighborhoods-list" class="space-y-4 pt-1"></div>
+            </div>
+        </div>
+
+        <!-- JOUR 1 -->
+        <div id="tab-j1" class="space-y-6 hidden">
+            <div class="glass-card rounded-3xl p-6 space-y-4">
+                <div class="rounded-2xl overflow-hidden h-40 relative shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Times Square">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4 text-white">
+                        <span class="text-[10px] font-bold text-blue-400 uppercase">Lundi 1er Mars 2027</span>
+                        <h2 class="text-base font-extrabold">Arrivée & Times Square</h2>
+                    </div>
+                </div>
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">15h00 - Check-in Hilton Club 57th St</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 102 W 57th St. Installation et repos.</p>
+                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Hilton">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">17h00 - Whole Foods Market</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 Columbus Circle. Eau, fruits et snacks.</p>
+                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Whole Foods">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">19h00 - Dîner : Burger Joint</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 119 W 56th St. Burgers cachés derrière le rideau rouge.</p>
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Burger">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">4</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">20h30 - Times Square de Nuit</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">Ambiance et néons sous les écrans géants.</p>
+                            <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Times Square">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JOUR 2 (ANNIVERSAIRE) -->
+        <div id="tab-j2" class="space-y-6 hidden">
+            <div class="glass-card rounded-3xl p-6 space-y-4 border border-amber-200">
+                <div class="rounded-2xl overflow-hidden h-40 relative shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Central Park">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4 text-white">
+                        <span class="text-[10px] font-bold text-amber-300 uppercase">🎂 Journée Anniversaire • 50 Ans</span>
+                        <h2 class="text-base font-extrabold">Central Park, Zabar's & Top of the Rock</h2>
+                    </div>
+                </div>
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-start space-x-3 bg-amber-50/50 p-3.5 rounded-2xl border border-amber-200">
+                        <span class="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">09h30 - Central Park (Bow Bridge)</h4>
+                            <p class="text-[11px] text-slate-600 mb-2">Promenade matinale sur le Bow Bridge et Bethesda.</p>
+                            <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Central Park">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-amber-50/50 p-3.5 rounded-2xl border border-amber-200">
+                        <span class="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">12h00 - Zabar's Épicerie Fine</h4>
+                            <p class="text-[11px] text-slate-600 mb-2">📍 2245 Broadway. Bagels légendaires au saumon.</p>
+                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Zabars">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-amber-50/50 p-3.5 rounded-2xl border border-amber-200">
+                        <span class="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">16h30 - Top of the Rock (Coucher de Soleil)</h4>
+                            <p class="text-[11px] text-slate-600 mb-2">📍 30 Rockefeller Plaza. Vue 360° sur Central Park.</p>
+                            <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Top of the Rock">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-amber-50/50 p-3.5 rounded-2xl border border-amber-200">
+                        <span class="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">4</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">20h00 - Dîner de Gala des 50 Ans</h4>
+                            <p class="text-[11px] text-slate-600 mb-2">📍 Restaurant ROBERT ou PEAK : Vue panoramique.</p>
+                            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Dîner">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JOUR 3 -->
+        <div id="tab-j3" class="space-y-6 hidden">
+            <div class="glass-card rounded-3xl p-6 space-y-4">
+                <div class="rounded-2xl overflow-hidden h-40 relative shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Wall Street">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4 text-white">
+                        <span class="text-[10px] font-bold text-blue-400 uppercase">Mercredi 3 Mars 2027</span>
+                        <h2 class="text-base font-extrabold">Wall Street, Statue & SoHo</h2>
+                    </div>
+                </div>
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">09h30 - Wall Street & Mémorial 9/11</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 Financial District. Taureau et bassins.</p>
+                            <img src="https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Wall Street">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">12h00 - Ferry de Staten Island (Gratuit)</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 Whitehall Terminal. Vue sur la Statue de la Liberté.</p>
+                            <img src="https://images.unsplash.com/photo-1541336024411-64c4a6d11f0d?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Ferry">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">14h30 - SoHo & Architecture en fonte</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">Boutiques et ruelles historiques cast-iron.</p>
+                            <img src="https://images.unsplash.com/photo-1529256952769-d4924c759458?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="SoHo">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">4</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">19h30 - Dîner : Katz's Delicatessen</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 205 E Houston St. Sandwich pastrami légendaire.</p>
+                            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Katzs">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JOUR 4 -->
+        <div id="tab-j4" class="space-y-6 hidden">
+            <div class="glass-card rounded-3xl p-6 space-y-4">
+                <div class="rounded-2xl overflow-hidden h-40 relative shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Brooklyn Bridge">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4 text-white">
+                        <span class="text-[10px] font-bold text-blue-400 uppercase">Jeudi 4 Mars 2027</span>
+                        <h2 class="text-base font-extrabold">Pont de Brooklyn & Street Art</h2>
+                    </div>
+                </div>
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">09h00 - Traversée du Pont de Brooklyn</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">Marche sur les planches en bois du pont.</p>
+                            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Brooklyn Bridge">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">11h00 - DUMBO & Time Out Market</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 Washington St. Photo de DUMBO et marché sur le toit.</p>
+                            <img src="https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="DUMBO">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">14h00 - Bushwick Collective Street Art</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 Troutman St. Fresques murales géantes à ciel ouvert.</p>
+                            <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Street Art">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">4</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">18h00 - Bar secret : Sunshine Laundromat</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 860 Manhattan Ave. Bar caché derrière une laverie.</p>
+                            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Speakeasy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JOUR 5 -->
+        <div id="tab-j5" class="space-y-6 hidden">
+            <div class="glass-card rounded-3xl p-6 space-y-4">
+                <div class="rounded-2xl overflow-hidden h-40 relative shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Little Island">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4 text-white">
+                        <span class="text-[10px] font-bold text-blue-400 uppercase">Vendredi 5 Mars 2027</span>
+                        <h2 class="text-base font-extrabold">Little Island, High Line & Jazz</h2>
+                    </div>
+                </div>
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">10h00 - Little Island & Greenwich Village</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 Pier 55. Parc flottant sur l'Hudson.</p>
+                            <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Little Island">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">12h30 - Chelsea Market</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 75 9th Ave. Dégustation d'homard et street food.</p>
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Chelsea Market">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">15h00 - Balade sur The High Line</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">Ancienne voie ferrée aérienne végétalisée.</p>
+                            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="High Line">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">4</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">20h30 - Soirée Jazz au Blue Note</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 131 W 3rd St. Club de jazz mythique.</p>
+                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Jazz">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JOUR 6 -->
+        <div id="tab-j6" class="space-y-6 hidden">
+            <div class="glass-card rounded-3xl p-6 space-y-4">
+                <div class="rounded-2xl overflow-hidden h-40 relative shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1538964173425-9388fdd7e567?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Fifth Avenue">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-4 text-white">
+                        <span class="text-[10px] font-bold text-blue-400 uppercase">Samedi 6 Mars 2027</span>
+                        <h2 class="text-base font-extrabold">5th Avenue & Brunch d'Adieu</h2>
+                    </div>
+                </div>
+                <div class="space-y-3 pt-2">
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">10h00 - 5th Avenue & Macy's</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 151 W 34th St. Escaliers en bois historiques de 1902.</p>
+                            <img src="https://images.unsplash.com/photo-1538964173425-9388fdd7e567?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Macys">
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
+                        <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                        <div class="flex-1">
+                            <h4 class="text-xs font-extrabold text-slate-900">12h30 - Brunch de clôture chez Sarabeth's</h4>
+                            <p class="text-[11px] text-slate-500 mb-2">📍 40 Central Park S. Pancakes fluffy au bord du parc.</p>
+                            <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl border border-slate-200" alt="Brunch">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modale Recherche -->
+    <div id="search-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-start justify-center pt-20 p-4 hidden opacity-0 transition-all duration-200">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-5 shadow-2xl border border-slate-100 space-y-4">
+            <div class="flex justify-between items-center">
+                <h3 class="text-sm font-bold text-slate-900 flex items-center"><i class="fa-solid fa-magnifying-glass text-blue-600 mr-2"></i> Recherche</h3>
+                <button onclick="closeGlobalSearch()" class="text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <input type="text" id="global-search-input" oninput="handleSearch(this.value)" placeholder="Rechercher un lieu, un resto..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600">
+            <div id="search-results" class="space-y-2 max-h-60 overflow-y-auto no-scrollbar">
+                <p class="text-xs text-slate-400 text-center py-4">Tapez un mot-clé...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const neighborhoodsData = [
+            {
+                id: 'midtown',
+                name: 'Midtown & Times Square',
+                desc: "Le cœur battant de Manhattan, gratte-ciels iconiques et théâtres de Broadway.",
+                image: 'https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=600&q=80',
+                spots: [
+                    { title: "Times Square", desc: "Immersion sous les écrans géants lumineux." },
+                    { title: "Top of the Rock", desc: "Observatoire panoramique au 30 Rockefeller Plaza." },
+                    { title: "Burger Joint", desc: "Le spot secret de burgers derrière un rideau rouge." },
+                    { title: "Macy's Herald Square", desc: "Le plus grand grand magasin du monde." }
+                ]
+            },
+            {
+                id: 'centralpark',
+                name: 'Upper West Side & Central Park',
+                desc: "Havre de paix verdoyant, architecture brownstone et institutions culturelles.",
+                image: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80',
+                spots: [
+                    { title: "Bow Bridge & Bethesda Fountain", desc: "Lieux romantiques et cinématographiques du parc." },
+                    { title: "Zabar's Épicerie Fine", desc: "L'institution légendaire des bagels au saumon." },
+                    { title: "Musée d'Histoire Naturelle", desc: "Immense musée scientifique incontournable." },
+                    { title: "Levain Bakery", desc: "Les cookies géants mi-cuits cultissimes." }
+                ]
+            },
+            {
+                id: 'downtown',
+                name: 'Lower Manhattan & SoHo',
+                desc: "Berceau historique, quartier financier et ruelles en fonte branchées.",
+                image: 'https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=600&q=80',
+                spots: [
+                    { title: "Wall Street & Mémorial 9/11", desc: "Le taureau de bronze et les bassins du mémorial." },
+                    { title: "Staten Island Ferry", desc: "Traversée gratuite avec vue sur la Statue de la Liberté." },
+                    { title: "SoHo Shopping", desc: "Architecture cast-iron et boutiques haut de gamme." },
+                    { title: "Katz's Delicatessen", desc: "Le temple mythique du sandwich au pastrami." }
+                ]
+            },
+            {
+                id: 'brooklyn',
+                name: 'Brooklyn & Bushwick',
+                desc: "Quartiers branchés, street art spectaculaire et vues sur la skyline.",
+                image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80',
+                spots: [
+                    { title: "Pont de Brooklyn", desc: "Traversée piétonne historique au-dessus de l'East River." },
+                    { title: "DUMBO & Time Out Market", desc: "Photo emblématique de Washington St." },
+                    { title: "Bushwick Collective Street Art", desc: "Galerie d'art urbain à ciel ouvert." },
+                    { title: "Sunshine Laundromat", desc: "Bar speakeasy secret caché derrière une laverie." }
+                ]
+            }
+        ];
+
+        function renderNeighborhoods(filter = 'all') {
+            const container = document.getElementById('neighborhoods-list');
+            if(!container) return;
+            container.innerHTML = '';
+            const filtered = filter === 'all' ? neighborhoodsData : neighborhoodsData.filter(n => n.id === filter);
+            
+            filtered.forEach(n => {
+                let spotsHtml = n.spots.map(s => `
+                    <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
+                        <h5 class="text-xs font-bold text-slate-900 mb-0.5">${s.title}</h5>
+                        <p class="text-[11px] text-slate-500">${s.desc}</p>
+                    </div>
+                `).join('');
+
+                container.innerHTML += `
+                    <div class="glass-card rounded-2xl p-4 space-y-3">
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <img src="${n.image}" class="w-full sm:w-28 h-24 object-cover rounded-xl border border-slate-200 shrink-0" alt="${n.name}">
+                            <div class="space-y-1 flex-1">
+                                <h4 class="text-xs font-black text-slate-900">${n.name}</h4>
+                                <p class="text-[11px] text-slate-500 leading-relaxed">${n.desc}</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                            ${spotsHtml}
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterNeighborhood(id) {
+            document.querySelectorAll('.filter-chip').forEach(btn => {
+                if (btn.dataset.filter === id) {
+                    btn.className = "px-3 py-1.5 rounded-xl bg-slate-900 text-white filter-chip active";
+                } else {
+                    btn.className = "px-3 py-1.5 rounded-xl bg-slate-100 text-slate-600 filter-chip";
+                }
+            });
+            renderNeighborhoods(id);
+        }
+
+        function switchTab(tabId) {
+            ['accueil', 'quartiers', 'j1', 'j2', 'j3', 'j4', 'j5', 'j6'].forEach(t => {
+                const el = document.getElementById('tab-' + t);
+                const btn = document.getElementById('btn-' + t);
+                if (el) el.classList.add('hidden');
+                if (btn) btn.classList.remove('active');
+            });
+            
+            const target = document.getElementById('tab-' + tabId);
+            const targetBtn = document.getElementById('btn-' + tabId);
+            if (target) target.classList.remove('hidden');
+            if (targetBtn) targetBtn.classList.add('active');
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (tabId === 'quartiers') {
+                renderNeighborhoods('all');
+            }
+        }
+
+        function openGlobalSearch() {
+            const modal = document.getElementById('search-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+            document.getElementById('global-search-input').focus();
+        }
+
+        function closeGlobalSearch() {
+            const modal = document.getElementById('search-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 200);
+        }
+
+        function handleSearch(query) {
+            const resultsContainer = document.getElementById('search-results');
+            if (!query.trim()) {
+                resultsContainer.innerHTML = '<p class="text-xs text-slate-400 text-center py-4">Tapez un mot-clé...</p>';
+                return;
+            }
+
+            const q = query.toLowerCase();
+            let matches = [];
+
+            neighborhoodsData.forEach(n => {
+                n.spots.forEach(s => {
+                    if (s.title.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q)) {
+                        matches.push({ type: 'Quartier / Spot', title: s.title, desc: s.desc, tab: 'quartiers' });
+                    }
+                });
+            });
+
+            if (matches.length === 0) {
+                resultsContainer.innerHTML = '<p class="text-xs text-slate-400 text-center py-4">Aucun résultat trouvé.</p>';
+                return;
+            }
+
+            resultsContainer.innerHTML = matches.map(m => `
+                <div onclick="switchTab('${m.tab}'); closeGlobalSearch();" class="bg-slate-50 p-3 rounded-xl border border-slate-200 hover:border-blue-600 cursor-pointer transition">
+                    <span class="text-[10px] uppercase font-bold text-blue-600">${m.type}</span>
+                    <h5 class="text-xs font-bold text-slate-900 mt-0.5">${m.title}</h5>
+                    <p class="text-[11px] text-slate-500 truncate">${m.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderNeighborhoods('all');
+        });
+    </script>
+</body>
+</html>
